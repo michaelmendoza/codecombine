@@ -1,0 +1,43 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[project]
+name = "codecombine"
+dynamic = ["version"]
+description = "A utility for combining code files from a directory structure into consolidated text files"
+readme = "README.md"
+requires-python = ">=3.6"
+license = "MIT"
+keywords = ["code", "combine", "utility", "development", "productivity", "ChatGPT tool"]
+authors = [
+  { name="Michael Mendoza", email="askmichaelmendoza@gmail.com" },
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+]
+dependencies = [
+
+]
+
+[project.scripts]
+codecombine = "codecombine.cli:main"
+
+[project.urls]
+"Homepage" = "https://github.com/michaelmendoza/codecombine"
+"Bug Tracker" = "https://github.com/michaelmendoza/codecombine/issues"
+
+[tool.hatch.version]
+path = "codecombine/__about__.py"
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "/codecombine",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["codecombine"]
